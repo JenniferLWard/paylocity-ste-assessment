@@ -1,0 +1,14 @@
+{
+  "name": "paylocity-ste-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JenniferLWard/paylocity-ste-assessment.git",
+  "author": "jenn-ward <wardjl1985@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "cypress": "^15.19.0"
+  },
+  "scripts": {}
+}
