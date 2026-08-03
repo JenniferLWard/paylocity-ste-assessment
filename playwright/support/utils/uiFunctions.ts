@@ -58,7 +58,9 @@ const confirmEmployeeBenefitsTable = async (
     (annualBenefitCost + annualDependentCost * dependents) / paychecksPerYear;
 
   const row = dashboard.rowByEmployeeId(userID);
-  const actualBenefitsCostText = await row.locator("td").nth(6).innerText();
+  const actualBenefitsCostText = await dashboard
+    .benefitsCostCellForRow(userID)
+    .innerText();
   const actualBenefitsCost = parseFloat(actualBenefitsCostText).toFixed(2);
 
   expect(

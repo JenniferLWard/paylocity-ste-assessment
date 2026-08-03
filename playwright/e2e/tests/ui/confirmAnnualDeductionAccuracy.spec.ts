@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import * as fs from "fs";
 import { BenefitsDashboardPage } from "../../../support/pages/benefitsDashboardPage";
 import {
@@ -8,6 +8,8 @@ import {
 import { apiRequest } from "../../../support/utils/apiFunctions";
 import { attachApiAuthHeader } from "../../../support/apiAuth";
 
+// Assertion is expected to fail: documents a confirmed rounding defect.
+// See: https://app.notion.com/p/Benefits-Cost-rounding-causes-annual-deduction-shortfall-per-paycheck-rounding-before-multiplicatio-3b03d6e9d6f780fa8051d5d166d6b3c8?source=copy_link
 const dependentCountsToTest = ["0", "1", "3", "4", "13", "32"];
 const resultsPath = "playwright/results/rounding-drift.jsonl";
 const finalResultsPath = "playwright/results/rounding-drift.json";

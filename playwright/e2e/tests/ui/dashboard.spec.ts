@@ -36,8 +36,8 @@ test.describe("Benefits Dashboard", { tag: "@smoke" }, () => {
     ]) {
       await expect(dashboard.employeeTableHeaderRow).toContainText(header);
     }
-  }); // <-- closes cleanly here now
-
+  }); 
+  
   test("displays existing employee data in the table", async ({ page }) => {
     const dashboard = new BenefitsDashboardPage(page);
     await expect(dashboard.employeeTableBodyRow.first()).toBeVisible();

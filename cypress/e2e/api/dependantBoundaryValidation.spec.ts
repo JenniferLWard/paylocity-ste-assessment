@@ -71,6 +71,7 @@ describe(
       });
     });
 
+    // Bug filed: https://app.notion.com/p/API-accepts-string-values-for-dependants-despite-schema-declaring-type-integer-3b13d6e9d6f780f7bae6e13ade056f85?source=copy_link
     it('rejects string type instead of integer ("3")', () => {
       apiRequest("POST", "/api/employees", buildPayload("3")).then((res) => {
         cy.log(`Status: ${res.status}`);

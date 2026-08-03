@@ -5,13 +5,19 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 6 * * *" # Runs at 06:00 UTC, 1:00 AM EST
+  # NOTE: In a production setup, smoke and regression would typically be
+  # triggered by deployment events and tied to specific environments
+  # (e.g. smoke runs automatically on deploy to staging/prod, regression
+  # runs on a nightly schedule against a stable environment), managed
+  # typically through DevOps-owned pipeline configuration rather than a single
+  # generic workflow_dispatch input. This simplified setup approximates
+  # that intent for demonstration purposes.
   workflow_dispatch:
     inputs:
       tag:
         description: "Tag to run (@smoke or @regression)"
         required: false
-        default: "@smoke"
 
 jobs:
   cypress:
@@ -31,13 +37,13 @@ jobs:
         with:
           browser: chrome
           env: CYPRESS_grepTags=@${{ matrix.tag }}
+        env:
+          CYPRESS_BASE_URL: ${{ secrets.BASE_URL }}
+          CYPRESS_UI_LOGIN_URL: ${{ secrets.UI_LOGIN_URL }}
+          CYPRESS_TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+          CYPRESS_TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          CYPRESS_TEST_AUTH_TOKEN: ${{ secrets.TEST_AUTH_TOKEN }}
       - name: Upload screenshots
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.tag }}-screenshots-${{ github.run_id }}
-          path: cypress/screenshots
-      - name: Upload videos
         if: failure()
         uses: actions/upload-artifact@v4
         with:

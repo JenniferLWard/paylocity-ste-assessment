@@ -1,27 +1,52 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
+  schedule:
+    - cron: "0 2 * * *" # Runs at 06:00 UTC, 1:00 AM EST
+  # NOTE: In a production setup, smoke and regression would typically be
+  # triggered by deployment events and tied to specific environments
+  # (e.g. smoke runs automatically on deploy to staging/prod, regression
+  # runs on a nightly schedule against a stable environment), managed
+  # typically through DevOps-owned pipeline configuration rather than a single
+  # generic workflow_dispatch input. This simplified setup approximates
+  # that intent for demonstration purposes.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to run (@smoke or @regression)"
+        required: true
 jobs:
-  test:
-    timeout-minutes: 60
+  playwright:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [smoke, regression]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm install -g yarn && yarn
-    - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
-    - name: Run Playwright tests
-      run: yarn playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm install -g yarn && yarn
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+      - name: Run Playwright tests
+        run: yarn playwright test --grep "@${{ matrix.tag }}"
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          UI_LOGIN_URL: ${{ secrets.UI_LOGIN_URL }}
+          TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          TEST_AUTH_TOKEN: ${{ secrets.TEST_AUTH_TOKEN }}
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.tag }}-playwright-report-${{ github.run_id }}
+          path: playwright-report/
+          retention-days: 30

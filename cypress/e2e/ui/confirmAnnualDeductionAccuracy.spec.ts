@@ -5,6 +5,8 @@ import { apiRequest } from "../../support/utils/apiFunctions";
 const dependentCountsToTest = ["0", "1", "3", "4", "13", "32"];
 const createdEmployeeIDs: string[] = [];
 
+// This test is expected to fail: documents a confirmed rounding defect.
+// See: https://app.notion.com/p/Benefits-Cost-rounding-causes-annual-deduction-shortfall-per-paycheck-rounding-before-multiplicatio-3b03d6e9d6f780fa8051d5d166d6b3c8?source=copy_link
 describe(
   "Annual deduction accuracy - rounding drift",
   { tags: "@regression" },
