@@ -14,4 +14,6 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands";
+// import grep for filtering tests based on tags or titles
+import "@cypress/grep";

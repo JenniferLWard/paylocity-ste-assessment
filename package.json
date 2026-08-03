@@ -6,9 +6,15 @@
   "author": "jenn-ward <wardjl1985@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@cypress/grep": "^6.0.2",
+    "@faker-js/faker": "^10.5.0",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2",
-    "cypress": "^15.19.0"
+    "cypress": "15.18.1",
+    "dotenv": "^17.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {}
 }

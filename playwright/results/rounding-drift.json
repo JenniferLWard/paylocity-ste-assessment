@@ -1,0 +1,18 @@
+[
+  {
+    "dependents": 4,
+    "displayedPerPaycheck": 115.38,
+    "projectedAnnual": 2999.88,
+    "trueAnnual": 3000,
+    "shortfall": 0.12,
+    "timestamp": "2026-08-03T00:19:24.838Z"
+  },
+  {
+    "dependents": 32,
+    "displayedPerPaycheck": 653.85,
+    "projectedAnnual": 17000.1,
+    "trueAnnual": 17000,
+    "shortfall": -0.1,
+    "timestamp": "2026-08-03T00:19:24.911Z"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "dependents": 0,
+    "displayedPerPaycheck": 38.46,
+    "projectedAnnual": 999.96,
+    "trueAnnual": 1000,
+    "shortfall": 0.04,
+    "timestamp": "2026-08-02T18:56:09.655Z"
+  },
+  {
+    "dependents": 1,
+    "displayedPerPaycheck": 57.69,
+    "projectedAnnual": 1499.94,
+    "trueAnnual": 1500,
+    "shortfall": 0.06,
+    "timestamp": "2026-08-02T18:56:10.884Z"
+  },
+  {
+    "dependents": 3,
+    "displayedPerPaycheck": 96.15,
+    "projectedAnnual": 2499.9,
+    "trueAnnual": 2500,
+    "shortfall": 0.1,
+    "timestamp": "2026-08-02T18:56:12.096Z"
+  },
+  {
+    "dependents": 4,
+    "displayedPerPaycheck": 115.38,
+    "projectedAnnual": 2999.88,
+    "trueAnnual": 3000,
+    "shortfall": 0.12,
+    "timestamp": "2026-08-02T18:56:13.242Z"
+  },
+  {
+    "dependents": 13,
+    "displayedPerPaycheck": 288.46,
+    "projectedAnnual": 7499.96,
+    "trueAnnual": 7500,
+    "shortfall": 0.04,
+    "timestamp": "2026-08-02T18:56:14.543Z"
+  },
+  {
+    "dependents": 32,
+    "displayedPerPaycheck": 653.85,
+    "projectedAnnual": 17000.1,
+    "trueAnnual": 17000,
+    "shortfall": -0.1,
+    "timestamp": "2026-08-02T18:56:15.803Z"
+  }
+]
