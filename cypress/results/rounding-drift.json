@@ -5,7 +5,7 @@
     "projectedAnnual": 999.96,
     "trueAnnual": 1000,
     "shortfall": 0.04,
-    "timestamp": "2026-08-03T02:15:45.609Z"
+    "timestamp": "2026-08-03T03:01:47.071Z"
   },
   {
     "dependents": 1,
@@ -13,7 +13,7 @@
     "projectedAnnual": 1499.94,
     "trueAnnual": 1500,
     "shortfall": 0.06,
-    "timestamp": "2026-08-03T02:15:46.708Z"
+    "timestamp": "2026-08-03T03:01:48.324Z"
   },
   {
     "dependents": 3,
@@ -21,7 +21,7 @@
     "projectedAnnual": 2499.9,
     "trueAnnual": 2500,
     "shortfall": 0.1,
-    "timestamp": "2026-08-03T02:15:47.857Z"
+    "timestamp": "2026-08-03T03:01:49.534Z"
   },
   {
     "dependents": 4,
@@ -29,7 +29,7 @@
     "projectedAnnual": 2999.88,
     "trueAnnual": 3000,
     "shortfall": 0.12,
-    "timestamp": "2026-08-03T02:15:49.019Z"
+    "timestamp": "2026-08-03T03:01:50.744Z"
   },
   {
     "dependents": 13,
@@ -37,7 +37,7 @@
     "projectedAnnual": 7499.96,
     "trueAnnual": 7500,
     "shortfall": 0.04,
-    "timestamp": "2026-08-03T02:15:50.203Z"
+    "timestamp": "2026-08-03T03:01:51.917Z"
   },
   {
     "dependents": 32,
@@ -45,6 +45,6 @@
     "projectedAnnual": 17000.1,
     "trueAnnual": 17000,
     "shortfall": -0.1,
-    "timestamp": "2026-08-03T02:15:51.437Z"
+    "timestamp": "2026-08-03T03:01:53.188Z"
   }
 ]
